@@ -1,0 +1,41 @@
+<module rename-to='phonebook'>
+    <!-- Inherit the core Web Toolkit stuff.                        -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!-- Inherit the default GWT style sheet.  You can change       -->
+    <!-- the theme of your GWT application by uncommenting          -->
+    <!-- any one of the following lines.                            -->
+    <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+    <!-- Other module inherits                                      -->
+    <inherits name="com.google.gwt.resources.Resources"/>
+    <inherits name='com.mvp4g.Mvp4gModule'/>
+
+    <!-- Specify the app entry point class.                         -->
+    <entry-point class='ru.my.naumen.phonebook.client.PhoneBook'/>
+
+    <source path="client"/>
+    <source path="shared"/>
+
+    <replace-with class="ru.my.naumen.phonebook.client.ui.shell.ShellView">
+        <when-type-is class="ru.my.naumen.phonebook.client.ui.shell.IShellView"/>
+    </replace-with>
+
+    <replace-with class="ru.my.naumen.phonebook.client.ui.record.RecordListView">
+        <when-type-is class="ru.my.naumen.phonebook.client.ui.record.IRecordListView"/>
+    </replace-with>
+
+    <!--<replace-with class="org.gwt4e.mvp4g.example.employeeadmin.client.ui.user.profile.UserProfileView">
+        <when-type-is class="org.gwt4e.mvp4g.example.employeeadmin.client.ui.user.profile.IUserProfileView"/>
+    </replace-with>
+
+    <replace-with class="org.gwt4e.mvp4g.example.employeeadmin.client.ui.user.role.UserRoleView">
+        <when-type-is class="org.gwt4e.mvp4g.example.employeeadmin.client.ui.user.role.IUserRoleView"/>
+    </replace-with>-->
+
+
+    <!-- Super Dev Mode                                             -->
+    <add-linker name="xsiframe"/>
+</module>
